@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <section className="section-screen">
-          <Welcome />
-        </section>
+        <Welcome />
       </main>
     </>
   );

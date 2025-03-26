@@ -5,9 +5,7 @@ import { GetServerSideProps } from "next";
 export default function AccountPage() {
   return (
     <main>
-      <section className="section-screen">
-        <AccountInfo />
-      </section>
+      <AccountInfo />
     </main>
   );
 }

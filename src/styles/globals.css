@@ -1,16 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700&display=swap");
+
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
   background-color: #f9fafc;
+  font-family: "Manrope", sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   line-height: 100%;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
 }
 
 :root {
@@ -31,8 +39,7 @@ body,
 
 .container {
   margin: 0 auto;
-  width: calc(100% - 40px);
-  max-width: 1760px;
+  width: calc(100% - 80px);
 }
 
 .header {
@@ -47,6 +54,8 @@ body,
 
 .header-wrapper {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: space-between;
   align-items: center;
 }
@@ -71,7 +80,7 @@ body,
   min-width: 117px;
 }
 
-.secondary-button:hover{
+.secondary-button:hover {
   background-color: var(--classic-grey-200);
 }
 
@@ -98,7 +107,7 @@ body,
 }
 
 .primary-button:active {
-  background-color: #2652C5;
+  background-color: #2652c5;
 }
 
 .rect-logo {
@@ -182,9 +191,17 @@ body,
   gap: 8px;
   align-items: center;
 }
+
+.visit-doc svg {
+  transition: all 0.3s ease;
+}
+
 .visit-doc:hover,
-.visit-doc:active {
-  color: var(--classic-darker-primary);
+.visit-doc:active,
+.visit-doc:hover svg,
+.visit-doc:active svg {
+  fill: var(--classic-primary);
+  color: var(--classic-primary);
 }
 
 .icon-link {
@@ -193,12 +210,12 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 25%;
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
 .icon-link:hover {
-  background-color: var(--classic-light-info);
+  background-color: var(--classic-grey-100);
 }
 
 .section-screen {
@@ -207,6 +224,7 @@ body,
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  padding: 130px 0;
 }
 
 .section-card {
@@ -219,6 +237,7 @@ body,
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  background-color: var(--classic-white);
 }
 
 .welcome-card {
@@ -233,7 +252,7 @@ body,
 }
 
 .welcome-title {
-  font-size: 30px;
+  font-size: 32px;
   line-height: 140%;
   font-weight: 700;
   color: var(--grey-900);
@@ -242,7 +261,7 @@ body,
 
 .welcome-text {
   font-size: 16px;
-  line-height: 120%;
+  line-height: 150%;
   font-weight: 400;
   color: var(--grey-600);
   text-align: center;
@@ -258,13 +277,14 @@ body,
 .account-card .title-wrapper {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
 }
 
 .account-card .title-wrapper .title {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--grey-900);
 }
@@ -275,8 +295,8 @@ body,
 
 .tenants-wrapper {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -287,7 +307,7 @@ body,
   flex-flow: column;
   gap: 16px;
   box-shadow: 0px 4px 24px 0px #2f334b14;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .tenant-title {
@@ -329,7 +349,7 @@ body,
   background-color: var(--classic-grey-200);
   color: var(--classic-grey-700);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 100%;
 }
 
@@ -345,6 +365,7 @@ body,
 .tenant-info-item {
   display: grid;
   grid-template-columns: 88px 1fr;
+  align-items: center;
 }
 
 .tenant-info-item-title {
@@ -365,6 +386,9 @@ body,
 .edit-button {
   width: 100%;
   margin-top: auto;
+}
+
+.dropdown {
 }
 
 .dropdown-button {
@@ -417,4 +441,47 @@ body,
 
 .dropdown-item.active {
   color: var(--classic-primary);
+}
+
+.tenant-info-copy-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px;
+  align-items: center;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-button {
+  width: fit-content;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-button svg {
+  transition: fill 0.3s ease;
+}
+
+.copy-button:hover svg,
+.copy-button:active svg {
+  fill: var(--classic-primary);
+}
+
+
+@media (min-width: 1280px) {
+  .container {
+    width: calc(100% - 160px);
+  }
+}
+
+@media (min-width: 768px) {
+  .tenants-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
