@@ -7,8 +7,8 @@ import Head from "next/head";
 
 const DEFAULT_SANDBOX_CONTEXT = {
   baseUrl: "https://sandbox.frontegg.com",
-  clientId: "9af126b9-c35f-4e2d-a3f1-c261e22aaf4a",
-  appId: "xxxx",
+  hostedAppId: "da398ff8-c069-428e-974a-afcded8c0c04",
+  embeddedAppId: "ad6012f5-905f-430e-ad0d-64e85f0ba6c7",
 };
 
 function App({ Component, pageProps }: AppProps) {
@@ -28,7 +28,8 @@ function App({ Component, pageProps }: AppProps) {
       <SignupBanner
         isDefaultCredentials={
           process.env.FRONTEGG_BASE_URL === DEFAULT_SANDBOX_CONTEXT.baseUrl &&
-          process.env.FRONTEGG_CLIENT_ID === DEFAULT_SANDBOX_CONTEXT.clientId
+          (process.env.FRONTEGG_APP_ID === DEFAULT_SANDBOX_CONTEXT.embeddedAppId ||
+            process.env.FRONTEGG_APP_ID === DEFAULT_SANDBOX_CONTEXT.hostedAppId)
         }
       />
     </>
@@ -37,7 +38,7 @@ function App({ Component, pageProps }: AppProps) {
 
 export default withFronteggApp(App, {
   authOptions: {
-    // keepSessionAlive: true, // Uncomment this in order to maintain the session alive
+    keepSessionAlive: true, // Uncomment this in order to maintain the session alive
   },
 });
 
