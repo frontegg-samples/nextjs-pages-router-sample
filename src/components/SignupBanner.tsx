@@ -10,13 +10,13 @@ const SignupBanner: React.FC<SignupBannerProps> = ({
   isDefaultCredentials,
 }) => {
   return (
-    <div className={`signup-banner ${isDefaultCredentials ? "show" : ""}`}>
+    <div className={`signup-banner ${!isDefaultCredentials ? "custom-credentials" : ""}`}>
       <div className="container signup-banner-wrapper">
         <p className="signup-banner-text">
           This sample uses Frontegg&apos;s default credentials. Sign up to use
           your own configurations.
           <Link
-            href="https://portal.frontegg.com/signup"
+            href="https://frontegg-prod.us.frontegg.com/oauth/account/sign-up"
             target="_blank"
             rel="noreferrer"
           >
@@ -43,7 +43,7 @@ const SignupBanner: React.FC<SignupBannerProps> = ({
           </Link>
           <div className="third-party-links">
             <Link
-              href="https://github.com/frontegg"
+              href="https://github.com/frontegg-samples/nextjs-pages-router-sample.git"
               target="_blank"
               rel="noreferrer"
               className="icon-link"
