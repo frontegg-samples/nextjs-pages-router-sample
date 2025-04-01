@@ -15,7 +15,7 @@ const AccountInfo = () => {
     user && user.profilePictureUrl ? (
       <Image
         src={user.profilePictureUrl}
-        alt="Welcome"
+        alt={user.name}
         width={24}
         height={24}
         onError={(e: React.SyntheticEvent<HTMLImageElement>) => {

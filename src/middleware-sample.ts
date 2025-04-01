@@ -1,5 +1,7 @@
-import { NextRequest } from 'next/server';
-import { handleSessionOnEdge } from '@frontegg/nextjs/edge';
+// Rename this file to middleware.ts to wrap the entire application
+// and enable automatic redirection to the login page or main app.
+import { NextRequest } from "next/server";
+import { handleSessionOnEdge } from "@frontegg/nextjs/edge";
 
 export const middleware = async (request: NextRequest) => {
   const { pathname, searchParams } = request.nextUrl;
@@ -14,5 +16,5 @@ export const middleware = async (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: '/(.*)',
+  matcher: "/(.*)",
 };
