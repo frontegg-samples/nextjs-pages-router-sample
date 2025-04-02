@@ -8,13 +8,13 @@ interface WelcomeProps {
 
 const Welcome = ({ isHosted }: WelcomeProps) => {
   const loginWithRedirect = useLoginWithRedirect();
-  const route = useRouter();
+  const router = useRouter();
 
   const login = () => {
     if (isHosted) {
       loginWithRedirect();
     } else {
-      route.push("/account/login");
+      router.push("/account/login");
     }
   };
 

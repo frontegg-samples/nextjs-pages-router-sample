@@ -1,4 +1,3 @@
-"use client";
 import { AdminPortal, useAuth, useAuthActions } from "@frontegg/nextjs";
 import { ITenantsResponse } from "@frontegg/rest-api";
 

@@ -8,11 +8,9 @@ interface HomeProps {
 
 export default function Home({ isHosted }: HomeProps) {
   return (
-    <>
-      <main>
-        <Welcome isHosted={isHosted} />
-      </main>
-    </>
+    <main>
+      <Welcome isHosted={isHosted} />
+    </main>
   );
 }
 
