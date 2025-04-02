@@ -1,15 +1,19 @@
-import { AdminPortal, useAuth, useAuthActions } from "@frontegg/nextjs";
+import { AdminPortal, useAuth, useAuthActions, useTeamActions, useTeamState } from "@frontegg/nextjs";
 import { ITenantsResponse } from "@frontegg/rest-api";
 
 import getInitials from "@/../utils/getInitials";
 import TenantsDropdown from "./TenantsDropdown";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import CopyToClipboardButton from "./CopyToClipboardButton";
+
 const TenantInfo = () => {
-  const { switchTenant, loadUsers } = useAuthActions();
-  const { tenantsState, user } = useAuth();
-  const [isLoadingMembers, setIsLoadingMembers] = useState(false);
-  const [totalMembers, setTotalMembers] = useState(0);
+  const { switchTenant } = useAuthActions();
+  const { tenantsState } = useAuth();
+  const {
+    users,
+    loaders: { USERS: isLoadingUsers },
+  } = useTeamState();
+  const { loadUsers } = useTeamActions();
 
   const openAccountSettings = () => {
     window.location.href = "#/admin-box/account";
@@ -21,20 +25,8 @@ const TenantInfo = () => {
   };
 
   useEffect(() => {
-    if (!user) {
-      return;
-    }
-    setIsLoadingMembers(true);
-    loadUsers({
-      pageOffset: 0,
-      pageSize: 100,
-      callback: (res) => {
-        setTotalMembers(res?.length || 0);
-      },
-    }).finally(() => {
-      setIsLoadingMembers(false);
-    });
-  }, [user, loadUsers]);
+    loadUsers({ pageOffset: 0, pageSize: 100 });
+  }, [loadUsers]);
 
   return tenantsState && tenantsState.activeTenant ? (
     <div className="tenant-card">
@@ -67,7 +59,7 @@ const TenantInfo = () => {
         <div className="tenant-info-item">
           <p className="tenant-info-item-title">Members</p>
           <p className="tenant-info-item-value">
-            {isLoadingMembers ? "Loading..." : `${totalMembers}`}
+            {isLoadingUsers ? "Loading..." : `${users?.length || 0}`}
           </p>
         </div>
 

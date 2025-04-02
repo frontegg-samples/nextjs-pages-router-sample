@@ -2,7 +2,7 @@ import AccountInfo from "@/components/AccountInfo";
 import { getSession } from "@frontegg/nextjs/pages";
 import { GetServerSideProps } from "next";
 
-export default function AccountPage() {
+export default function HomePage() {
   return (
     <main>
       <AccountInfo />
