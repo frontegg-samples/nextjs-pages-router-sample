@@ -1,12 +1,12 @@
 ![Next.js Pages Router Hosted Login Banner](/public/assets/next-banner.png)
 
-# Next.js Pages Router Hosted Login Sample
+# Next.js Pages Router sample
 
 This sample showcases how to seamlessly add authentication and user management to your Next.js app using Frontegg’s hosted or embedded login methods.
 
 ## This app showcases
 
-- Redirect users to Frontegg’s embedded login
+- Redirect users to Frontegg’s hosted or embedded login
 - Enable a fully integrated self-service portal
 - Manage and track user authentication state
 - Access and display user profile details
@@ -27,15 +27,6 @@ The project follows the Next.js Pages Router structure:
 └── public/           # Static assets
 ```
 
-## Features
-
-This application demonstrates:
-- Next.js Pages Router integration with Frontegg's Hosted Login
-- Protected routes and middleware implementation
-- User authentication state management
-- Access to user profile information
-- Built-in security features
-
 ## Get started in a few simple steps
 
 If you don’t have a Frontegg account or prefer to use the sandbox credentials, feel free to skip to step **3**.
@@ -52,7 +43,7 @@ If you're using your own credentials, follow the guidelines below.
 
 ### 2. Configure environment variables -
 
-Update the `.env.local` file in the root directory with your Frontegg credentials. Then, choose your preferred login mode by setting `FRONTEGG_HOSTED_LOGIN` to false for embedded login. By default, the Frontegg sandbox environment runs in hosted mode.
+Update the `.env.local` file in the root directory with your Frontegg credentials. Then, choose your preferred login mode by setting `FRONTEGG_HOSTED_LOGIN` to `false` for embedded login. By default, the Frontegg sandbox environment runs in hosted mode.
 
 ```env
 FRONTEGG_BASE_URL=<YOUR_BASE_URL>
