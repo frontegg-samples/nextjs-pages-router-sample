@@ -75,8 +75,8 @@ npm install
 npm run dev
 ```
 
-That’s it — you're all set!
-
 The app will be available at [http://localhost:3000](http://localhost:3000).
+
+![Next.js sample](/public/assets/sample-next.png)
 
 ### Experience Frontegg in action!
