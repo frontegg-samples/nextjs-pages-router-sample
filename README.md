@@ -58,7 +58,7 @@ FRONTEGG_HOSTED_LOGIN=<true|false>
 Run the following command:
 
 ```bash
-npm clone <repo>
+git clone <repo>
 ```
 
 ### 4. Install dependencies -
