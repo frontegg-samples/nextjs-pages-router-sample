@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@frontegg/nextjs": "^9.2.6",
+    "@frontegg/nextjs": "^9.2.7",
     "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
